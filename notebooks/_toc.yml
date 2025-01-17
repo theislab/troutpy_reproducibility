@@ -1,0 +1,13 @@
+format: jb-book
+root: index
+parts:
+    - caption: My super cool experiment
+      chapters:
+          - file: my_experiment/my_experiment_notebook
+    - caption: My super cool complex experiment
+      chapters:
+          - file: my_complex_experiment/README
+            sections:
+                - file: my_complex_experiment/my_complex_experiment_a
+                - file: my_complex_experiment/my_complex_experiment_b
+          

@@ -1,0 +1,9 @@
+title: My super cool project
+author: John Doe
+execute:
+    execute_notebooks: "off"
+
+repository:
+    url: x
+html:
+    use_repository_button: true
