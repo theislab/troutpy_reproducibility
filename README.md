@@ -1,3 +1,3 @@
-# My super cool repo
+# Troutpy reproducibility
 
-tbd
+This repository contains all the code used to perform the analysis presented in the troutpy manuscript
