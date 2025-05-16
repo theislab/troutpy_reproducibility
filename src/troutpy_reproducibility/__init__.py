@@ -1,5 +1,7 @@
 from .utils import running_in_notebook
-from troutpy_reproducibility.roi_processing import (plot_spatial_with_box_and_scale,generate_metadata,rechunk_sdata)
-from troutpy_reproducibility.batch_running import clustering_pipeline
-
-
+from troutpy_reproducibility.roi_processing import plot_spatial_with_box_and_scale, generate_metadata, rechunk_sdata
+from troutpy_reproducibility.batch_running import (
+    clustering_pipeline,
+    batch_spatial_inout_maps,
+    estimate_environment_neighbors,
+)

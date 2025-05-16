@@ -11,6 +11,7 @@ import matplotlib.patches as patches
 import os
 import numpy as np
 
+
 def plot_spatial_with_box_and_scale(
     spatial_coords,
     bb_xmin,
@@ -21,7 +22,7 @@ def plot_spatial_with_box_and_scale(
     pixel_size_um=4.705,
     dot_size=0.1,
     figsize=(7, 7),
-    scale_bar_loc='bottom_left'
+    scale_bar_loc="bottom_left",
 ):
     """
     Plot spatial coordinates with bounding box and a scale bar.
@@ -50,7 +51,7 @@ def plot_spatial_with_box_and_scale(
 
     # Create figure
     fig, ax = plt.subplots(figsize=figsize)
-    ax.scatter(spat_x, spat_y, s=dot_size, c='grey')
+    ax.scatter(spat_x, spat_y, s=dot_size, c="grey")
 
     # Draw bounding box
     bb_w = bb_xmax - bb_xmin
@@ -62,14 +63,14 @@ def plot_spatial_with_box_and_scale(
     x_min, x_max = ax.get_xlim()
     y_min, y_max = ax.get_ylim()
 
-    if scale_bar_loc == 'bottom_left':
+    if scale_bar_loc == "bottom_left":
         x_pos = x_min + 0.05 * (x_max - x_min)
         y_pos = y_min + 0.05 * (y_max - y_min)
     else:
         raise NotImplementedError("Only 'bottom_left' scale_bar_loc is implemented.")
 
-    ax.plot([x_pos, x_pos + scale_um], [y_pos, y_pos], color='black', linewidth=3)
-    ax.text(x_pos, y_pos - 0.01 * (y_max - y_min), f'{int(scale_um)} µm', fontsize=10, ha='left', va='top')
+    ax.plot([x_pos, x_pos + scale_um], [y_pos, y_pos], color="black", linewidth=3)
+    ax.text(x_pos, y_pos - 0.01 * (y_max - y_min), f"{int(scale_um)} µm", fontsize=10, ha="left", va="top")
 
     # Clean up axes
     ax.grid(False)
@@ -80,16 +81,7 @@ def plot_spatial_with_box_and_scale(
 
 
 def generate_metadata(
-    sdata,
-    sample_id,
-
-    species,
-    technology,
-    segmentation_method,
-    roi_name,
-    tissue,
-    disease,
-    pixel_size_um=4.705
+    sdata, sample_id, species, technology, segmentation_method, roi_name, tissue, disease, pixel_size_um=4.705
 ):
     """
     Generate and save metadata for a SpatialData sample.
@@ -115,7 +107,7 @@ def generate_metadata(
     table = sdata["table"]
     total_cells = table.shape[0]
     total_cellular_transcripts = int(table.X.sum())
-    total_transcripts=len(sdata['transcripts'].index.compute())
+    total_transcripts = len(sdata["transcripts"].index.compute())
     total_genes = table.shape[1]
 
     coords = table.obsm["spatial"] * pixel_size_um
@@ -124,27 +116,31 @@ def generate_metadata(
     area_profiled = x_range * y_range  # in µm²
     cell_density = total_cells / area_profiled * 1e6  # cells per mm²
 
-    metadata = pd.DataFrame([{
-        "sample_id": sample_id,
-        "species": species,
-        "technology": technology,
-        "segmentation_method": segmentation_method,
-        "roi_name": roi_name,
-        "tissue": tissue,
-        "disease": disease,
-        "total_cells": total_cells,
-        "total_cellular_transcripts": total_cellular_transcripts,
-        "proportion_cellular_transcripts": total_cellular_transcripts/total_transcripts,
-        "total_transcripts": total_transcripts,
-        "total_genes": total_genes,
-        "area_profiled_um2": area_profiled,
-        "cell_density_per_mm2": cell_density
-    }])
+    metadata = pd.DataFrame(
+        [
+            {
+                "sample_id": sample_id,
+                "species": species,
+                "technology": technology,
+                "segmentation_method": segmentation_method,
+                "roi_name": roi_name,
+                "tissue": tissue,
+                "disease": disease,
+                "total_cells": total_cells,
+                "total_cellular_transcripts": total_cellular_transcripts,
+                "proportion_cellular_transcripts": total_cellular_transcripts / total_transcripts,
+                "total_transcripts": total_transcripts,
+                "total_genes": total_genes,
+                "area_profiled_um2": area_profiled,
+                "cell_density_per_mm2": cell_density,
+            }
+        ]
+    )
 
     return metadata
 
 
-def rechunk_sdata(sdata, chunk_size={'x': 512, 'y': 512}):
+def rechunk_sdata(sdata, chunk_size={"x": 512, "y": 512}):
     """
     Rechunks all image and label layers in a SpatialData object to the specified chunk size.
 
@@ -160,7 +156,7 @@ def rechunk_sdata(sdata, chunk_size={'x': 512, 'y': 512}):
         print(f"Processing image: {image_name}")
         for scale_name, da in image_tree.items():
             print(f"  Rechunking scale: {scale_name}")
-            if hasattr(da, 'chunk'):
+            if hasattr(da, "chunk"):
                 print("  Applying chunking...")
                 image_tree[scale_name] = da.chunk(chunk_size)
 
@@ -169,7 +165,6 @@ def rechunk_sdata(sdata, chunk_size={'x': 512, 'y': 512}):
         print(f"Processing label: {labels_name}")
         for scale_name, da in labels_tree.items():
             print(f"  Rechunking scale: {scale_name}")
-            if hasattr(da, 'chunk'):
+            if hasattr(da, "chunk"):
                 print("  Applying chunking...")
                 labels_tree[scale_name] = da.chunk(chunk_size)
-
