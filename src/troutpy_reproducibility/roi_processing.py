@@ -1,3 +1,8 @@
+"""Region-of-interest (ROI) selection helpers used by ``notebooks/1_roi_selection_notebooks``.
+
+Each dataset is cropped to one ROI that is then processed by the uRNA pipeline; the
+ROIs are available on Zenodo (10.5281/zenodo.17446348).
+"""
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 import spatialdata_io
@@ -168,3 +173,4 @@ def rechunk_sdata(sdata, chunk_size={"x": 512, "y": 512}):
             if hasattr(da, "chunk"):
                 print("  Applying chunking...")
                 labels_tree[scale_name] = da.chunk(chunk_size)
+

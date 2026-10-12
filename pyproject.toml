@@ -1,33 +1,35 @@
 [build-system]
-requires = ['setuptools', 'setuptools_scm']
-build-backend = 'setuptools.build_meta'
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
 
 [project]
-name = "mypkg"
-version = "0.0.0"
-description = "My package description"
+name = "troutpy_reproducibility"
+version = "1.0.0"
+description = "Helper code used to reproduce the analyses of the troutpy manuscript (unassigned RNA in imaging-based spatial transcriptomics)."
 readme = "README.md"
-requires-python = ">=3.8"
+requires-python = ">=3.10"
 license = {file = "LICENSE"}
 authors = [
-    {name = "John Doe"},
+    {name = "Sergio Marco Salas", email = "sergio.salas@helmholtz-munich.de"},
 ]
-maintainers = [
-    {name = "John Doe", email = "john@doe.org"},
-]
-urls.Documentation = "https://todo.com"  # TODO
-urls.Source = "https://github.com/theislab/my_super_cool_repo.git"
-urls.Home-page = "https://github.com/theislab/my_super_cool_repo.git"
+urls.Source = "https://github.com/theislab/troutpy_reproducibility"
+urls.troutpy = "https://github.com/theislab/troutpy"
+# Only the light, always-needed dependencies are listed; the full analysis
+# environments are given in envs/*.yml.
 dependencies = [
-    "jupyterlab",
-    "ipywidgets",
-    "anndata"
+    "troutpy",
+    "numpy",
+    "pandas",
+    "scipy",
+    "scanpy",
+    "anndata",
+    "spatialdata",
+    "matplotlib",
+    "seaborn",
 ]
 
-[project.optional-dependencies]
-dev = [
-    "pre-commit",
-]
+[tool.setuptools.packages.find]
+where = ["src"]
 
 [tool.black]
 line-length = 120
@@ -115,10 +117,3 @@ ignore = [
     "B904",
 ]
 
-[tool.jupytext]
-notebook_metadata_filter = "-all,-jupytext.text_representation"
-cell_metadata_filter = "-all"
-
-[tool.jupytext.formats]
-"notebooks/" = "ipynb"
-"scripts/" = "py:percent"

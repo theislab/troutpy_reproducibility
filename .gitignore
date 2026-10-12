@@ -157,3 +157,16 @@ figures/
 
 # R stuff
 *.Rhistory
+
+# --- troutpy_reproducibility specific ---
+# material moved out for review, scratch areas and run artifacts
+_to_review/
+.scratch*/
+logs/
+*.err
+*.out
+*.watchmark
+slurm-*.out
+# local working notes for the authors (not part of the public repo)
+CLEANUP_PLAN.md
+MISSING_OR_UNVERIFIED.md
