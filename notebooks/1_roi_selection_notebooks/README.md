@@ -9,7 +9,7 @@ in the study, convert it to troutpy's SpatialData layout (`troutpy.pp.xenium_con
 | Notebook | Dataset folder |
 |---|---|
 | `Atera.ipynb`, `atera_processing.py` (+ `.sbatch`) | `atera_hsbreast` |
-| `CosMx_hgsoc.ipynb` / `CosMx_melanoma.ipynb` / `CosMx_msbrain.ipynb` / `CosMx_pancreas.ipynb` / `CosMx_stomach.ipynb` | `cosmx_hgsoc` / `cosmx_melanoma` / `cosmx_mousebrain` / `cosmx_pancreas` / `cosmx_stomach` |
+| `CosMx_hgsoc.ipynb` / `CosMx_melanoma.ipynb` / `CosMx_msbrain.ipynb` / `CosMx_stomach.ipynb` | `cosmx_hgsoc` / `cosmx_melanoma` / `cosmx_mousebrain` / `cosmx_stomach` |
 | `MERSCOPE_human_brain.ipynb` / `MERSCOPE_hs_uterine.ipynb` | `merscope_hsbrain` / `merscope_hsuterine` |
 | `Xenium_hs_femur.ipynb` / `Xenium_hs_heart.ipynb` / `Xenium_5khs_prostate.ipynb` / `Xenium_hs_putamen.ipynb` / `Xenium_5khs_skin.ipynb` | `xenium_hsfemur` / `xenium_hsheart` / `xenium_hsprostate` / `xenium_hsputamen` / `xenium_hsskin_5k` |
 | `Xenium_300msbrain.ipynb` / `Xenium_5kmsbrain.ipynb` / `Xenium_5kmscolon.ipynb` | `xenium_msbrain_300` / `xenium_msbrain_5k` / `xenium_mscolon_5k` |

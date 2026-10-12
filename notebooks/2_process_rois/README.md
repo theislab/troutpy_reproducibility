@@ -9,7 +9,6 @@ docstring. One `urna_analysis_pipeline_<dataset>.sbatch` per dataset submits the
 |---|---|
 | `urna_analysis_pipeline.py` | Xenium, Atera, CosMx mouse brain and stomach |
 | `urna_analysis_pipeline_cosmx_merscope.py` | CosMx hgsoc / melanoma, MERSCOPE brain / uterine |
-| `urna_analysis_pipeline_cosmx_pancreas.py` | CosMx pancreas |
 | `urna_analysis_pipeline_xenium_rcc.py` | Multimodal Xenium RCC |
 
 `convert_zarr_v3_to_v2.py` converts the RCC ROI (written with the newer spatialdata/zarr v3)
