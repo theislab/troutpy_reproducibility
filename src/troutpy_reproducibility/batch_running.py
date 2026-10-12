@@ -1,3 +1,13 @@
+"""Helpers used by the uRNA processing pipelines (``notebooks/2_process_rois``).
+
+- :func:`clustering_pipeline`: Scanpy QC, normalization, PCA, neighbours, Leiden and
+  UMAP of segmented cells (Methods, "Cell expression processing").
+- :func:`estimate_environment_neighbors`: number of neighbouring uRNA bins whose
+  counts match a typical cell, used by ``troutpy.tl.in_out_correlation`` (Methods,
+  "Quantification of intracellular-uRNA local correlation").
+- :func:`batch_spatial_inout_maps`: batch plotting of per-gene intracellular vs.
+  uRNA spatial maps.
+"""
 import scanpy as sc
 import os
 import os
