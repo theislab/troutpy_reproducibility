@@ -133,7 +133,7 @@ dependencies:
       - tornado==6.5.7
       - traitlets==5.15.1
       - triton==3.7.0
-      - troutpy  # install from https://github.com/theislab/troutpy (see README)
+      - git+https://github.com/theislab/troutpy@ef7e4d4  # troutpy, see README
       - -e .  # this repository
       - typing-inspection==0.4.2
       - tzdata==2026.2
