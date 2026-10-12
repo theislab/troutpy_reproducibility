@@ -99,7 +99,7 @@ produces, its inputs/outputs and its kernel.
 | Fig. 3A | `3_analysis_of_results/9_other_urna_noise_proportion.ipynb` |
 | Fig. 3B | `3_analysis_of_results/10_other_urna_diffusion_proportion.ipynb` |
 | Fig. 3C | `3_analysis_of_results/11_full_rna_classification.ipynb` |
-| Fig. 3D, 3G (left) | `3_analysis_of_results/5_overall_per_noise_gene_scatters_revisions.ipynb` |
+| Fig. 3D, 3G | `3_analysis_of_results/5_overall_per_noise_gene_scatters_revisions.ipynb` (3G right: H3F3B cell) |
 | Fig. 3E | `4_detailed_analysis/detailed_analysis_melanoma_revisions.ipynb`, `3_analysis_of_results/3_overall_scatters.ipynb` |
 | Fig. 3F | `4_detailed_analysis/detailed_analysis_mscolon_revisions.ipynb` |
 | Fig. 3H | `3_analysis_of_results/4_cross_technology_comparison.ipynb` |
@@ -116,6 +116,7 @@ produces, its inputs/outputs and its kernel.
 | ED Fig. 2G | `3_analysis_of_results/7_spatial_map_segmentation_comparison.ipynb` |
 | ED Fig. 3A-B, 3E | `4_detailed_analysis/0_annotation_msbrain_5k.ipynb` |
 | ED Fig. 3C-G | `4_detailed_analysis/2_drvi_analysis_msbrain.ipynb` |
+| ED Fig. 3H-I | `4_detailed_analysis/2_drvi_analysis_msbrain.ipynb`, last section (SynGO / Vesiclepedia) |
 | ED Fig. 4 | `4_detailed_analysis/0_annotation_atera_breast.ipynb`, `2_drvi_analysis_atera_hsbreast.ipynb` |
 | ED Fig. 5A | `3_analysis_of_results/control_probes/build_preservation_plot_v2.py` |
 | ED Fig. 5C-E | `SUPP2_rayleigh_distribution_simulation/Simulating_data_for_diffussion_complex_3d.ipynb` |
