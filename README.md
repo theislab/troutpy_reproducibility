@@ -29,13 +29,15 @@ are in [`envs/`](envs):
 ```bash
 conda env create -f envs/troutpy_drvi.yml
 conda activate troutpy_drvi
-pip install -e /path/to/troutpy --no-deps    # troutpy (see version below)
+pip install --no-deps "troutpy @ git+https://github.com/theislab/troutpy@ef7e4d4"   # troutpy (see below)
 pip install -e . --no-deps                   # this repository's helper package
 ```
 
-**troutpy version.** All results use the troutpy version that renames
-`tl.adaptative_source_score_optimized` to `tl.urna_source_score` (λ = 0.5 default) and
-adds `tl.subtract_local_urna_background`. Use troutpy ≥ that release.
+**troutpy version.** This repository requires troutpy at commit
+[`ef7e4d4`](https://github.com/theislab/troutpy/commit/ef7e4d43c6b857eb87352987bf38953ad8858392) (merge of
+theislab/troutpy#27) or any later release. That version provides `tl.urna_source_score`
+(formerly `tl.adaptative_source_score_optimized`, λ = 0.5 by default) and
+`tl.subtract_local_urna_background`. troutpy v0.1.1 (June 2026) predates both and will not work.
 
 Notebooks and scripts import the code as normal packages:
 
